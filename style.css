@@ -1,0 +1,11 @@
+@charset"UTF-8";
+    @media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000;
+    color: #fff;
+  }
+  header{
+     background-color: #000;
+    color: #fcc;
+}
+}
