@@ -1,1 +1,1 @@
-<a href="a.htm">test page</a>
+<a href="a.htm">page</a>
