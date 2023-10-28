@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>力学の基本</title>
+</head>
+<body>
+  <header>
+    <h1>力学の基本</h1>
+  </header>
+  <main>
+    <h2>ここでの数学的記号などの説明</h2>
+    <p>ここでは、物理量xの変化量をΔxとして表します。</p>
+    <p>時間や質量は向きがない大きさだけの量(スカラー)として考え、速度と運動量や力は向きと大きさのある量(ベクトル)として考えます。変数や定数を文字で表すときはスカラーは細字、ベクトルは太字で表記します。</p>
+    <p>また、yをxで微分するとは、<span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+ <span style="padding: 0 4px; font-size: large;">lim</span>
+ <span style="padding: 0 10px; font-size: small;">Δx→0</span>
+</span><span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+ <span style="padding: 0 10px; border-bottom: 1px solid #000000;">Δy</span>
+ <span style="padding: 0 10px;">Δx</span></span>を求めること、つまり<span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+ <span style="padding: 0 10px; border-bottom: 1px solid #000000;">∂y</span>
+ <span style="padding: 0 10px;">∂x</span></span>を求めることとします。</p>
+    <p>yをxで区間[a,b]の積分するとは、リーマン和<span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+ <span style="padding: 0 4px; font-size: large;">lim</span>
+ <span style="padding: 0 10px; font-size: small;">Δ→0</span>
+</span><span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+ <span style="padding: 0 4px;"><sub>n</sub></span>
+ <span style="padding: 0 4px; font-size: xx-large;">Σ</span>
+ <span style="padding: 0 4px;"><sup>k=1</sup></span>
+</span>y<sub>i</sub>Δx<sub>i</sub>がinf<span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+ <span style="padding: 0 4px; font-size: large;">lim</span>
+ <span style="padding: 0 10px; font-size: small;">Δ→0</span>
+</span><span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+ <span style="padding: 0 4px;"><sub>n</sub></span>
+ <span style="padding: 0 4px; font-size: xx-large;">Σ</span>
+ <span style="padding: 0 4px;"><sup>k=1</sup></span>
+</span>y<sub>(i,sup)</sub>Δx<sub>i</sub> (ただし、y<sub>(i,sup)</sub>は[x<sub>i-1</sub>,x<sub>i</sub>]でyがとる値の上限)とsup<span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+ <span style="padding: 0 4px; font-size: large;">lim</span>
+ <span style="padding: 0 10px; font-size: small;">Δ→0</span>
+</span><span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+ <span style="padding: 0 4px;"><sub>n</sub></span>
+ <span style="padding: 0 4px; font-size: xx-large;">Σ</span>
+ <span style="padding: 0 4px;"><sup>k=1</sup></span>
+</span>y<sub>(i,inf)</sub>Δx<sub>i</sub> (ただし、y<sub>(i,inf)</sub>は[x<sub>i-1</sub>,x<sub>i</sub>]でyがとる値の下限)のいずれにも一致するときの値<span style="display: inline-flex; flex-direction: row; vertical-align: middle; text-align: center;"><span style="font-size: 60px; padding: 0px 4px;">∫</span><span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+ <span style="padding: 5px 4px; font-size: 12px;">b</span>
+ <span style="padding: 0 4px;">&nbsp;</span>
+ <span style="padding: 0 4px; font-size: 12px;">a</span>
+</span></span>y&nbsp;dxを求めることとします。また、xが向きと大きさのある量(ベクトル)のときは、そのベクトルと同じ向きの単位ベクトルとベクトルの大きさと考え、単位ベクトルと被積分関数の積(ベクトルのときは内積、スカラーのときは単位ベクトルのスカラー倍)をベクトルの大きさで積分するものとします。</p>
+　　<p>ただし、リーマン和を求めるときのy<sub>i</sub>Δx<sub>i</sub>及びΔは、区間[a,b]をa=x<sub>0</sub>,b=x<sub>n</sub>としてn個に分割し、Δx<sub>i</sub>=x<sub>i</sub>-x<sub>i-1</sub>としたときに、その中で最大のものをΔ、、y<sub>i</sub>は[x<sub>i-1</sub>,x<sub>i</sub>]でyがとる値のうちのいずれかと定義します。</p>
+    <p>また、今回扱うニュートン力学の問題では、通常は質量mについて<span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+ <span style="padding: 0 10px; border-bottom: 1px solid #000000;">∂m</span>
+ <span style="padding: 0 10px;">∂t</span></span>&nbsp;=&nbsp;0として考えますので、ここでもそうします。</p>
+    <h2>力の定義</h2>
+    <p>物体の質量、速度、運動量をそれぞれm,<strong>v</strong>,<strong>p</strong> としたときに、<br>
+<div><strong>p</strong>&nbsp;=&nbsp;m<strong>v</strong></div><br>
+と表せます。</p>
+<p>この式の両辺をtで微分すると、<br>
+<div><span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+ <span style="padding: 0 10px; border-bottom: 1px solid #000000;">∂</span>
+ <span style="padding: 0 10px;">∂t</span></span><strong>p</strong>&nbsp;=&nbsp;m<span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;"><span style="padding: 0 10px; border-bottom: 1px solid #000000;">∂</span><span style="padding: 0 10px;">∂t</span></span><strong>v</strong></div><br>
+から、<br>
+<div><span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+ <span style="padding: 0 10px; border-bottom: 1px solid #000000;">∂</span>
+ <span style="padding: 0 10px;">∂t</span></span><strong>p</strong>&nbsp;=&nbsp;<strong>F</strong>,&nbsp;<span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;"><span style="padding: 0 10px; border-bottom: 1px solid #000000;">∂</span><span style="padding: 0 10px;">∂t</span></span><strong>v</strong>&nbsp;=&nbsp;<strong>a</strong></div>とすると、<br>
+<div><strong>F</strong>&nbsp;=&nbsp;m<strong>a</strong></div><br>
+という式が成り立ちます。このとき、<strong>F</strong>を物体に働く力、<strong>a</strong>を物体の加速度と定義します。また、この&nbsp;<strong>F</strong>&nbsp;=&nbsp;m<strong>a</strong>&nbsp;という式を運動方程式と呼びます。</p>
+    <p>また、<strong>F</strong>&nbsp;=&nbsp;0のとき、Δ<strong>p</strong>&nbsp;=&nbsp;0であることから、Δ<strong>v</strong>&nbsp;=&nbsp;0が分かります。</p>
+    <h2>力について</h2>
+    <p>実は、重力や垂直抗力などその物体にかかる全ての力を<strong>F<sub>k</sub></strong>(k&nbsp;=&nbsp;1,2,…,n)としたときの合力<span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+ <span style="padding: 0 4px;"><sub>n</sub></span>
+ <span style="padding: 0 4px; font-size: xx-large;">Σ</span>
+ <span style="padding: 0 4px;"><sup>k=1</sup></span>
+</span><strong>F<sub>k</sub></strong>が、Δ<strong>p</strong>から求められる力です。<br>また、実際の物体には力が働いているので、Δ<strong>p</strong>&nbsp;=&nbsp;0である物体は、力がつりあいその物体に働く合力が0になっているのです。また、物体A,Bの位置ベクトルをそれぞれ<strong>r<sub>A</sub></strong>,<strong>r<sub>B</sub></strong>としたとき、物体Aに物体Bが及ぼす力<strong>F</strong>は大きく分けると正の変数(定数を含む)kを用いて、<strong>F</strong>&nbsp;=&nbsp;k(<strong>r<sub>A</sub></strong>-<strong>r<sub>B</sub></strong>)と表せる引きつける力と、<strong>F</strong>&nbsp;=&nbsp;-k(<strong>r<sub>A</sub></strong>-<strong>r<sub>B</sub></strong>)と表せる遠ざける力に分けることができます。</p>
+    <hr>
+    <p>引きつける力の例</p>
+    <ul>
+      <li>重力</li>
+      <li>電荷の正負が異なる粒子同士に働くクーロン力</li>
+    </ul>
+    <p>遠ざける力の例</p>
+    <ul>
+      <li>垂直抗力</li>
+      <li>電荷の正負が等しい粒子同士に働くクーロン力</li>
+    </ul>
+    <hr>
+    <h2>作用反作用の法則</h2>
+    <p>n個の物体について考えるとき、それらの物体以外からの力が働いていないなら、それぞれの物体の運動量<strong>p<sub>k</sub></strong>(k&nbsp;=&nbsp;1,2,…,n)の総和
+<span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+ <span style="padding: 0 4px;"><sub>n</sub></span>
+ <span style="padding: 0 4px; font-size: xx-large;">Σ</span>
+ <span style="padding: 0 4px;"><sup>k=1</sup></span>
+</span><strong>p<sub>k</sub></strong>は変化しません。<br>
+これを運動量保存の法則と言います。</p>
+    <p>特に、2物体のときにはこの法則から2物体のそれぞれの運動量の変化量Δ<strong>p<sub>1</sub></strong>,Δ<strong>p<sub>2</sub></strong>はΔ<strong>p<sub>1</sub></strong>&nbsp;=&nbsp;-Δ<strong>p<sub>2</sub></strong>ということが分かります。<br>
+このとき、それぞれの物体の運動量を時間で微分すると、<br>
+<span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+ <span style="padding: 0 10px; border-bottom: 1px solid #000000;">∂</span>
+ <span style="padding: 0 10px;">∂t</span></span><strong>p<sub>1</sub></strong>&nbsp;=&nbsp;<span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+ <span style="padding: 0 10px; border-bottom: 1px solid #000000;">∂</span>
+ <span style="padding: 0 10px;">∂t</span></span>(-<strong>p<sub>2</sub></strong>)<br>
+であり、<br>
+それぞれの物体に働く力を<strong>F<sub>1</sub></strong>,<strong>F<sub>2</sub></strong>とすると、<br>
+<strong>F<sub>1</sub></strong>&nbsp;=&nbsp;-<strong>F<sub>2</sub></strong>がなりたちます。これを作用反作用の法則と言います。</p> 
+    <p>また、2物体以外から力が働くとき、それぞれの物体に働く外部からの力(外力)の合計をそれぞれ<strong>f<sub>1</sub></strong>,<strong>f<sub>2</sub></strong>とします。このとき、それぞれの物体に働く力は、それぞれ
+<strong>F<sub>1</sub></strong>+<strong>f<sub>1</sub></strong>,<strong>F<sub>2</sub></strong>+<strong>f<sub>2</sub></strong>であるからそれぞれの式をtで区間[t<sub>0</sub>,t<sub>1</sub>]の積分して運動量変化量Δ<strong>p<sub>1</sub></strong>,Δ<strong>p<sub>2</sub></strong>を求めると、<br>
+Δ<strong>p<sub>1</sub></strong>=<span style="display: inline-flex; flex-direction: row; vertical-align: middle; text-align: center;"><span style="font-size: 60px; padding: 0px 4px;">∫</span><span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+ <span style="padding: 5px 4px; font-size: 12px;">t<sub>1</sub></span>
+ <span style="padding: 0 4px;">&nbsp;</span>
+ <span style="padding: 0 4px; font-size: 12px;">t<sub>0</sub></span>
+</span></span>(<strong>F<sub>1</sub></strong>+<strong>f<sub>1</sub></strong>)&nbsp;dt
+,Δ<strong>p<sub>2</sub></strong>=<span style="display: inline-flex; flex-direction: row; vertical-align: middle; text-align: center;"><span style="font-size: 60px; padding: 0px 4px;">∫</span><span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+ <span style="padding: 5px 4px; font-size: 12px;">t<sub>1</sub></span>
+ <span style="padding: 0 4px;">&nbsp;</span>
+ <span style="padding: 0 4px; font-size: 12px;">t<sub>0</sub></span>
+</span></span>(<strong>F<sub>2</sub></strong>+<strong>f<sub>2</sub></strong>)&nbsp;dtとなり、t<sub>0</sub>での運動量をそれぞれ<strong>p<sub>1</sub></strong>,<strong>p<sub>2</sub></strong>とすると、それぞれの物体のt<sub>1</sub>での運動量は、<br>
+<strong>p<sub>1</sub></strong>+<span style="display: inline-flex; flex-direction: row; vertical-align: middle; text-align: center;"><span style="font-size: 60px; padding: 0px 4px;">∫</span><span style="display: inline-flex; flex-direction: column; vertical-align: baseline; text-align: center;">
+ <span style="padding: 5px 4px; font-size: 12px;">t<sub>1</sub></span>
+ <span style="padding: 0 4px;">&nbsp;</span>
+ <span style="padding: 0 4px; font-size: 12px;">t<sub>0</sub></span>
+</span></span>(<strong>F<sub>1</sub></strong>+<strong>f<sub>1</sub></strong>)&nbsp;dt,&nbsp;<strong>p<sub>2</sub></strong>+<span style="display: inline-flex; flex-direction: row; vertical-align: middle; text-align: center;">
+ <span style="font-size: 60px;padding: 0px 4px;">∫</span>
+ <span style="display: inline-flex; flex-direction: column; vertical-align: baseline; text-align: center;">
+ <span style="padding: 5px 4px; font-size: 12px;">t<sub>1</sub></span>
+ <span style="padding: 0 4px;">&nbsp;</span>
+ <span style="padding: 0 4px; font-size: 12px;">t<sub>0</sub></span>
+</span></span>(<strong>F<sub>2</sub></strong>+<strong>f<sub>2</sub></strong>)&nbsp;dtとなります。<br>
+また、それぞれの物体が相互に力を加えない場合のt<sub>0</sub>からt<sub>1</sub>での運動量変化を考えると、<br>
+それぞれ
+<span style="display: inline-flex; flex-direction: row; vertical-align: middle; text-align: center;"><span style="font-size: 60px; padding: 0px 4px;">∫</span><span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+ <span style="padding: 5px 4px; font-size: 12px;">t<sub>1</sub></span>
+ <span style="padding: 0 4px;">&nbsp;</span>
+ <span style="padding: 0 4px; font-size: 12px;">t<sub>0</sub></span>
+</span></span><strong>f<sub>1</sub></strong>&nbsp;dt
+,<span style="display: inline-flex; flex-direction: row; vertical-align: middle; text-align: center;"><span style="font-size: 60px; padding: 0px 4px;">∫</span><span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+ <span style="padding: 5px 4px; font-size: 12px;">t<sub>1</sub></span>
+ <span style="padding: 0 4px;">&nbsp;</span>
+ <span style="padding: 0 4px; font-size: 12px;">t<sub>0</sub></span>
+</span></span><strong>f<sub>2</sub></strong>&nbsp;dtです。ここで、<span style="display: inline-flex; flex-direction: row; vertical-align: middle; text-align: center;"><span style="font-size: 60px; padding: 0px 4px;">∫</span><span style="display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center;">
+ <span style="padding: 5px 4px; font-size: 12px;">t<sub>1</sub></span>
+ <span style="padding: 0 4px;">&nbsp;</span>
+ <span style="padding: 0 4px; font-size: 12px;">t<sub>0</sub></span>
+</span></span><strong>f<sub>1</sub></strong>&nbsp;dtのような力を時間で積分した物理量を力積と呼びます。<br>
+なお、運動量の総和を変化させる要素は外力なので、<br>
+ここから外力による力積が存在し、運動量保存則が成り立たない状況でも、作用反作用の法則はなりたつことがわかります。</p>
+<p>なので、今回とは逆に作用反作用の法則から運動量保存の法則をしめすこともできます。</p>
+  </main>
+</body>
+</html>
