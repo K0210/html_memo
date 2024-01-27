@@ -1,0 +1,24 @@
+@charset"UTF-8";
+body {
+  padding-top: 180px;
+  background-color: yellow;
+  color: purple;
+}
+header {
+  text-align: left;
+  background-color: pink;
+  color: purple;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+h1 {
+  line-height: 2;
+}
+.department {
+  color: yellow;
+}
+input:checked + label {
+  color: purple;
+}
