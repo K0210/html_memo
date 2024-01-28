@@ -1,12 +1,18 @@
-const department1 = document.getElementsByClassName("department1");
-const department2 = document.getElementsByClassName("department2");
-function1(){
-      for(let u=0;u<department1.length;u++){
-            department1[u].checked = false;
-      }
-}
-function2(){
-      for(let u=0;u<department2.length;u++){
-        department2[u].checked = false;
-      }
-} 
+$(function(){
+  $('.department2').on('click', function() {
+    if ($(this).prop('checked')){
+      // 一旦全てをクリアして再チェックする
+      $('.department1').prop('checked', false);
+      $(this).prop('checked', true);
+    }
+  });
+});
+$(function(){
+  $('.department1').on('click', function() {
+    if ($(this).prop('checked')){
+      // 一旦全てをクリアして再チェックする
+      $('.department2').prop('checked', false);
+      $(this).prop('checked', true);
+    }
+  });
+});
