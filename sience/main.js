@@ -3,7 +3,6 @@ $(function(){
     if ($(this).prop('checked')){
       $('.department1').prop('checked', false);
       $('.department3').prop('checked', false);
-      $(this).prop('checked', true);
     }
   });
 });
@@ -12,7 +11,6 @@ $(function(){
     if ($(this).prop('checked')){
       $('.department2').prop('checked', false);
       $('.department3').prop('checked', false);
-      $(this).prop('checked', true);
     }
   });
 });
@@ -21,7 +19,6 @@ $(function(){
     if ($(this).prop('checked')){
       $('.department1').prop('checked', false);
       $('.department2').prop('checked', false);
-      $(this).prop('checked', true);
     }
   });
 });
