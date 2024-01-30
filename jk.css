@@ -2,3 +2,6 @@
 #jk{
   display:none;
 }
+label{
+	border: solid 1px #454545;
+}
