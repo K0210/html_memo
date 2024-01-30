@@ -8,7 +8,6 @@ label{
 }
 @media (prefers-color-scheme: dark) {
 	label{
-		padding: 5px;
 		border: solid 3px #cbcbcb;
 	}
 }
