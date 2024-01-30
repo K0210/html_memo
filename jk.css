@@ -4,10 +4,10 @@
 }
 label{
 	padding: 5px;
-	border: solid 3px #454545;
+	border: solid 1px #454545;
 }
 @media (prefers-color-scheme: dark) {
 	label{
-		border: solid 3px #cbcbcb;
+		border: solid 1px #cbcbcb;
 	}
 }
