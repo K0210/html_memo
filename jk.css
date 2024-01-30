@@ -1,7 +1,12 @@
 @charset"UTF-8";
 #jk{
-  display:none;
+	display:none;
 }
 label{
 	border: solid 1px #454545;
+}
+@media (prefers-color-scheme: dark) {
+	label{
+		border: solid 1px #cbcbcb;
+	}
 }
