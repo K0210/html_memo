@@ -11,11 +11,12 @@
     <input type="number" name="k" value="1"size="4"> ＝ 
   </form>
   <script>
-    let plus
+    let plus = document.querySelector('output');
     let jpeg
     let k
-    plus.value = Number(jpeg.value) + Number(k.value);
-    document.write(plus)
+    let p
+    p = Number(jpeg.value) + Number(k.value);
+    plus.innerHTML = p.toString()
   </script>
   <output name="plus"for="jpeg k">2</output>
 </body>
