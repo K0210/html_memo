@@ -1,4 +1,4 @@
-let jk = document.getElementsByTagName("main").getElementById('jk');
+let jk = document.getElementById('jk');
 switch(jk.checked){
   case true;
     alert(String.fromCodePoint(22909,12365,12391,12377,12290,13,10,20184,12365,21512,12387,12390,12367,12384,12373,12356,12290));
