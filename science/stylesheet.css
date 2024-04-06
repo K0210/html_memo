@@ -1,13 +1,13 @@
 @charset"UTF-8";
 body {
   padding-top: 180px;
-  background-color: yellow;
-  color: purple;
+  background-color: rgba(255,255,0,255);
+  color: rgba(255,0,255,255);
 }
 header {
   text-align: left;
-  background-color: pink;
-  color: purple;
+  background-color: rgba(234,145,152,255);
+  color: rgba(255,0,255,255);
   position: fixed;
   top: 0;
   left: 0;
@@ -17,8 +17,8 @@ h1 {
   line-height: 2;
 }
 .department {
-  color: yellow;
+  color: rgba(255,255,0,0);
 }
 input:checked + label {
-  color: purple;
+  color: rgba(255,0,255,255);
 }
