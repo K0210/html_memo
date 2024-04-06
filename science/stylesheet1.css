@@ -18,13 +18,13 @@ h1 {
 }
 .department {
   color: rgba(134,145,152,0);
+  .G30{
+    display:none;
+  }
+  #others:checked + .G30{
+    display:block
+  }
 }
 input:checked + label {
   color: rgba(150,210,210,255);
-}
-.G30{
-  display:none;
-}
-#others:checked + .G30{
-  display:block
 }
