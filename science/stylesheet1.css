@@ -22,6 +22,9 @@ h1 {
 input:checked + label {
   color: rgba(150,210,210,255);
 }
-#others:checked{
-  
+.G30{
+  display:none;
+}
+#others:checked + .G30{
+  display:block
 }
