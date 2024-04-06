@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         department.forEach(function(dep) {
           dep.checked = false;
         });
+        this.checked = true;
       }
     });
   });
