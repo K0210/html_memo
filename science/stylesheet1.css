@@ -1,0 +1,24 @@
+@charset"UTF-8";
+body {
+  padding-top: 180px;
+  background-color: rgba(255,255,0,255);
+  color: rgba(150,210,218 ,255);
+}
+header {
+  text-align: left;
+  background-color: rgba(234,145,152,255);
+  color: rgba(150,210,210,255);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+h1 {
+  line-height: 2;
+}
+.department {
+  color: rgba(255,255,0,0);
+}
+input:checked + label {
+  color: rgba(150,210,210,255);
+}
