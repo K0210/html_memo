@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  let department = document.querySelectorAll('.department2');
+  let department = document.querySelectorAll('.G30_department');
 
   department.forEach(function(element) {
     element.addEventListener('click', function() {
