@@ -21,16 +21,16 @@ a = 0
 b = 0
 c = 0
 k = 1
-While Cells(1,k).value <> ""
-a = a + Cells(1,k)
-b = b + Cells(2,k)
-c = c + Cells(1,k) * Cells(2,k)
+While Cells(1, k).Value <> ""
+a = a + Cells(1, k)
+b = b + Cells(2, k)
+c = c + Cells(1, k) * Cells(2, k)
 n = k
 k = k + 1
 Wend
-d = c/n - a/n * b/n
+d = c / n - a / n * b / n
 MsgBox d
-Cells(3,k) = d
+Cells(3, k) = d
     </code>
   </pre>
 </body>
